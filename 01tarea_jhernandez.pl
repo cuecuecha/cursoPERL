@@ -55,7 +55,7 @@ while($op != 5)
 		case 4
 			{print"\t\t\n***PRAGMA***\n";
 			print"Es un tipo de mudulo que entra en accion  cuando se ejecuta el programa";
-			print"\nsirven como una especie de pistas para el compilador, un ejemplo es el scrict\n";
+			print"\nsirven como una especie de pistas para el compilador para que realicen una tarea, un ejemplo es el scrict\n";
 			print"que se ocupa para verificar que se ha inicializado una variable, entre otras cosas\n\n";
 			}
 
