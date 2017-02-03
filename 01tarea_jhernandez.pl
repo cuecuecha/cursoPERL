@@ -2,11 +2,36 @@
 use warnings;
 use strict;
 use Switch;
+use utf8;
+
 =pod
-=h1 Description
-El script recibe dos numeros, estos se sumaran
-La salida se mostrara en pantalla
+=head1 Description
+=encoding utf8
+
+El script es una calculadora que mostrara un menu donde se podra 
+escoger una opcion (suma,resta,multiplicadion,¿que es un pragma?)
+Recibira una opcion y te desplagara que introduzcas dos numeros o 
+te aparecera la definicion finalmente te aparecera el resultado 
+de dicha operacion. 
+Te volvera a desplegar el menu ya que se encuentra en un ciclo 
+while, para salir tedras que escoger la opcion 5.
+
+Ejemplo:
+1.Suma
+2.Resta
+3.Multiplicacion
+4.¿Que es pragma?
+5.Salir
+
+opcion: 1
+
+        Suma
+primer numero: 5
+segundo numero: 10.5
+Resultado: 15.5
+
 =cut
+
 my $n1;
 my $n2;
 my $op;
