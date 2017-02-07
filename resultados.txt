@@ -1,0 +1,45 @@
+TOTAL DE IP DIFERENTES--> 2
+TOTAL DE IP ENCONTRADAS-->2
+
+TOTAL DE DOMINIOS DIFERENTES-->5
+TOTAL DE DOMINIOS ENCONTRADOS-->7
+
+TOTAL DE URL DIFERENTES-->4
+TOTAL DE URL  ENCONTRADAS-->5
+
+TOTAL DE EMAIL DIFERENTES-->2
+TOTAL DE EMAIL ENCONTRADOS-->4
+
+
+
+Las direcciones IP encontradas son:
+Total 	|	 Ip's
+
+1	|	1.2.3.4
+1	|	192.168.10.12
+
+
+Los dominios encontrados son:
+
+Total 	|  DOMINIO
+1	|1.2.3.
+1	|192.168.10.12
+1	|comoestas.uk.com
+3	|gmail.com.uk
+1	|hola.com.mx
+
+
+Las URL's encontradas son: 
+Total 	|  URL's
+1	|http://hola.com.mx
+2	|http://remote.com/asdf/foo/bar.jpg
+1	|https://comoestas.uk.com
+1	|https://remote.com/asdf/foo/bar.jpg
+
+
+Los Email's encontrados son: 
+Total 	|  EMAIL's
+3	|guillermo_test@gmail.com.uk
+1	|hola@gmail.com
+
+

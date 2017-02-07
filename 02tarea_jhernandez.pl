@@ -121,7 +121,7 @@ while(<FH>)
 	$nEMAIL++;
 	}
 }#cierra while
-close FH;
+#close FH;
 #Se imprime el numero total de ip, url, emails y dominios
 print"\n\n";
 print FH2 "TOTAL DE IP DIFERENTES--> ",scalar(keys %IPveces),"\n";
