@@ -3,9 +3,8 @@ use warnings;
 use strict;
 use Switch;
 use utf8;
-
-=pod
 =head1 Description
+=pod
 =encoding utf8
 
 El script es una calculadora que mostrara un menu donde se podra 
