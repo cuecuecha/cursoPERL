@@ -53,7 +53,8 @@ TOTAL |   DOMINIO
 =cut
 
 my $file = 'resultados.txt';
-my $archivo=$ARGV[0];
+#my $archivo=$ARGV[0];
+my $log = 'jhernandez.LOG';
 my $IPbusqueda;
 my $URLbusqueda;
 my $DOMbusqueda;
@@ -69,7 +70,7 @@ my $nDOMINIO=0;
 my $nURL=0;
 
 
-open(LOG,'>>',"jhernandez.log") or die "ERROR no se pudo abrir el archivo o no existe\n";
+#open(LOG,'+>',$log) or die "ERROR no se pudo abrir el archivo o no existe\n";
 open(FH2,'+>',$file)  or die "ERROR no se pudo abrir el archivo o no existe'$file' $!"; ##abre y si no existe lo crea,
 	
 
@@ -80,10 +81,10 @@ if($#ARGV+1 != 1)
 	print "02tarea_jhernandez.pl datos.txt\n\n";
 	exit();
 }
-if(!open(FH,"<",$archivo))
+if(!open(FH,"<",$ARGV[0]))
 {
 	print"No se puede arbir el archivo ",$ARGV[0]," o no existe\n";
-        say LOG "No se puede abrir el archivo\n";
+#        say LOG "No se puede abrir el archivo\n";
 	exit();
 
 }
@@ -98,7 +99,7 @@ while(<FH>)
 		$nIP++;#aumenta en uno cada que encuentra una ip
 	}
 	#para DOMINIO
-        if($_=~/([0-9a-zA-Z]+|www|(https|http):\/\/www)((\.|=2E)[0-9a-zA-Z]+)+((\.|=2E)([0-9a-zA-Z]{2,3})*)/)
+        if($_=~/([a-z]+|www|(https|http):\/\/www)((\.|=2E)[0-9a-zA-Z]+)+((\.|=2E)([a-zA-Z]{2,3})*)/)
 	{
                 $DOMbusqueda = ($&);    
                 $DOMveces{$DOMbusqueda}++;
@@ -108,17 +109,17 @@ while(<FH>)
 	#para URL
 	if($_=~/(((https|http|ftp):\/\/)(www(\.|=2E))?|(www+\.))([\da-z\.-]+)(\.|2E)([a-z(\.|2E)]{2,6})([\/\w \?=.-]*)*\/?/)
 	{
-	$URLbusqueda = ($&);         
-	$URLveces{$URLbusqueda}++;  
-	$nURL++;
+		$URLbusqueda = ($&);         
+		$URLveces{$URLbusqueda}++;  
+		$nURL++;
 	}
 	
 	#para EMAIL
 	if($_=~/(\w+|\W+|\w+\W+)((\.|=2E|\_\-)(\w+|\W+))*@(\w+|\W+)((\.|=2E)[a-z0-9-]+)*((\.|=2E)([a-z]{2,3})*)/)
 	{
-	$EMAILbusqueda=($&);
-	$EMAILveces{$EMAILbusqueda}++;
-	$nEMAIL++;
+		$EMAILbusqueda=($&);
+		$EMAILveces{$EMAILbusqueda}++;
+		$nEMAIL++;
 	}
 }#cierra while
 #close FH;
@@ -172,4 +173,4 @@ print FH2 "\n\n";
 
 close FH; #cierra archivo de busqueda
 close FH2; #cierra el archivo de resultados
-close LOG; #cierra archivo de errores
+#close LOG; #cierra archivo de errores

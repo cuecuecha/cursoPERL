@@ -97,7 +97,7 @@ if(!open(FH,"<",$archivo))
 			#para IP
 			if($_=~/(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])/)
 			{
-				$IPbusqueda = ($&); #hace match con lo que encuentra
+				$IPbusqueda = ($&)[0]; #hace match con lo que encuentra
 	    			$IPveces{$IPbusqueda}++; #la agrega al hash y aumenta en uno
 				$nIP++;#aumenta en uno cada que encuentra una ip
 			}
@@ -105,15 +105,15 @@ if(!open(FH,"<",$archivo))
 			#para DOMINIO
 		        if($_=~/([0-9a-zA-Z]+|www|(https|http):\/\/www)((\.|=2E)[0-9a-zA-Z]+)+((\.|=2E)([0-9a-zA-Z]{2,3})*)/)
 	      		{
-		                $DOMbusqueda = ($&);    
+		                $DOMbusqueda = ($&)[0];    
 		                $DOMveces{$DOMbusqueda}++;
 				$nDOMINIO++;
         		}
 
 			#para URL
-			if($_=~/(((https|http|ftp):\/\/)(www(\.|=2E))?|(www+\.))([\da-z\.-]+)(\.|2E)([a-z(\.|2E)]{2,6})([\/\w \?=.-]*)*\/?/)
+			if(/(((https|http|ftp):\/\/)(www(\.|=2E))?|(www+\.))([\da-z\.-]+)(\.|2E)([a-z(\.|2E)]{2,6})([\/\w \?=.-]*)*\/?/)
 			{
-				$URLbusqueda = ($&);         
+				$URLbusqueda = ($&)[0];         
 		                $URLveces{$URLbusqueda}++;  
 				$nURL++;
 			}
@@ -121,7 +121,7 @@ if(!open(FH,"<",$archivo))
 			#para EMAIL
 			if($_=~/(\w+|\W+|\w+\W+)((\.|=2E|\_\-)(\w+|\W+))*@(\w+|\W+)((\.|=2E)[a-z0-9-]+)*((\.|=2E)([a-z]{2,3})*)/)
 			{
-				$EMAILbusqueda=($&);
+				$EMAILbusqueda=($&)[0];
 		               	$EMAILveces{$EMAILbusqueda}++;
 				$nEMAIL++;
 		        }
