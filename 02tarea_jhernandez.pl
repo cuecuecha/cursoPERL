@@ -70,7 +70,7 @@ my $nDOMINIO=0;
 my $nURL=0;
 
 
-#open(LOG,'+>',$log) or die "ERROR no se pudo abrir el archivo o no existe\n";
+open(LOG,'+>',$log) or die "ERROR no se pudo abrir el archivo o no existe\n";
 open(FH2,'+>',$file)  or die "ERROR no se pudo abrir el archivo o no existe'$file' $!"; ##abre y si no existe lo crea,
 	
 
@@ -84,7 +84,7 @@ if($#ARGV+1 != 1)
 if(!open(FH,"<",$ARGV[0]))
 {
 	print"No se puede arbir el archivo ",$ARGV[0]," o no existe\n";
-#        say LOG "No se puede abrir el archivo\n";
+        say LOG "No se puede abrir el archivo\n";
 	exit();
 
 }
@@ -173,4 +173,4 @@ print FH2 "\n\n";
 
 close FH; #cierra archivo de busqueda
 close FH2; #cierra el archivo de resultados
-#close LOG; #cierra archivo de errores
+close LOG; #cierra archivo de errores
