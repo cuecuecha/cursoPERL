@@ -1,5 +1,9 @@
 #!perl
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> fbbb3c8b17dcd87d68697ab31a59bf2669842523
 use strict;
 use warnings;
 
@@ -30,6 +34,7 @@ for(@file)
 
 for my $var(sort keys %hash2)
 {
+<<<<<<< HEAD
 	#print "\nLlave del hash2: \n",$var,"\n";
 	#print "\nValor del hash2: \n", $hash2{$var};
 	for (sort keys %{$hash2{$var}})
@@ -42,6 +47,16 @@ for my $var(sort keys %hash2)
 			for(@{$hash2{$var}{$_}})
 			{
 				print("\%hash2{$var}{$_}\n");
+=======
+	print "\n Llave : ", $var, "   Valores: \n";
+	for (sort keys %{$hash2{$var}})
+	{
+		print $_, ":", $hash2{$var}{$_},"\n";
+		if ($_ eq "shell")
+		{
+			for(@{$hash2{$var}{$_}})
+			{
+>>>>>>> fbbb3c8b17dcd87d68697ab31a59bf2669842523
 				print $_, "\n";
 			}
 		}
